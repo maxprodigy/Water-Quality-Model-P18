@@ -6,7 +6,7 @@ This project aims to **predict water potability** based on various physicochemic
 ## Models Implemented
 We trained and evaluated **two different models**, each utilizing different **regularization techniques** and **optimizers** to compare performance:
 
-1️⃣ **L1 Regularization with Adam Optimizer (Your Model)**  
+1️⃣ **L1 Regularization with Adam Optimizer (Peter Johnson's Model)**  
 2️⃣ **L2 Regularization with SGD Optimizer (Colleague's Model)**  
 
 Both models are assessed based on **accuracy, precision, recall, F1-score, and loss curves**.
@@ -17,19 +17,16 @@ Both models are assessed based on **accuracy, precision, recall, F1-score, and l
 
 | Train Instance | Engineer Name | Regularizer | Optimizer | Early Stopping | Dropout Rate | Training Accuracy | Validation Accuracy | Test Accuracy | F1 Score | Recall | Precision |
 |---------------|--------------|-------------|-----------|----------------|--------------|------------------|------------------|-------------|---------|--------|-----------|
-| 1 | Peter Johnson | **L1 (0.003)** | **Adam (lr=0.0001)** | Patience=15, monitor='val_loss' | 0.3 | **0.4068** | **0.9267** | **0.8800** | **0.8767** | **0.8205** | **0.9412** |
+| 1 | **Peter Johnson** | **L1 (0.002)** | **Adam (lr=0.0001)** | Patience=15, monitor='val_loss' | 0.3 | **0.4068** | **0.9267** | **0.8800** | **0.8767** | **0.8205** | **0.9412** |
 | 2 | Ines Irikezi | **L2 (0.003)** | **SGD (lr=0.001, momentum=0.9)** | Patience=10, monitor='val_loss' | 0.25 | TBD | TBD | TBD | TBD | TBD | TBD |
 
-🔹 **Note:**  
-- The **second row (colleague’s model) will be updated** once training is complete.  
 
 ---
 
 ## Performance Analysis
-**L1 Regularization + Adam** performed well with a **high validation accuracy (92.67%) and test accuracy (88%)**, suggesting **good generalization**.  
-**Precision (94.12%) is high**, meaning **low false positives**—the model rarely classifies unsafe water as safe.  
-**Recall (82.05%) is slightly lower**, meaning it **misses some potable water samples** (false negatives).  
-**Next Steps:** Comparing against the **L2 + SGD model** to determine which generalizes better.
+The traditional machine learning model implemented by Inès IKIREZI utilizes a structured approach with L2 regularization and an SGD optimizer. It achieves a high training accuracy of 89.24% and generalizes well with a validation accuracy of 86.42% and a test accuracy of 84.15%. This efficient and interpretable model makes it suitable for real-world applications where model explainability is important.
+
+On the other hand, Peter Johnson's deep learning model uses L1 regularization, dropout layers, and the Adam optimizer to improve generalization. Despite its lower training accuracy (40.68%), the model significantly outperforms in validation (92.67%) and test accuracy (88.00%), demonstrating superior generalization capability. The deep learning approach provides higher predictive power at the cost of increased computational complexity.
 
 ---
 
@@ -38,14 +35,13 @@ Both models are assessed based on **accuracy, precision, recall, F1-score, and l
 📁 Water-Potability-Classification 
 │── 📄 README.md 
 │── 📄 requirements.txt # Dependencies required for the project 
-│── 📂 data/ 
-│── 📂 notebooks/ # Jupyter Notebooks for training and evaluation 
+│── 📂 data/
+│── 📄 water_potability.csv #Dataset
+│── 📂 notebooks/ # Notebooks for training and evaluation 
 │── 📄 Peter_Johnson_Water_Quality_Model.ipynb
 │── 📄 colleague_model.ipynb # Colleague's trained model (to be completed) 
-│── 📂 reports/ # Analysis reports and performance metrics 
-│── 📂 plots/ # Loss & accuracy curves, confusion matrices 
-│── 📂 src/ # Python scripts for preprocessing & modeling 
-│── 📄 LICENSE # Open-source license information
+
+
 
 
 ---
@@ -67,15 +63,10 @@ colleague_model.ipynb (for L2 + SGD)
 Run all cells in the notebooks.
 View loss curves, accuracy metrics, and confusion matrices.
 
-## Visualizations
-We have included performance plots to track model training progress:
-
-Training Loss Curve	Accuracy Curve
-🔹 The confusion matrices and classification reports provide deeper insights into model performance.
 
 ## Contributors
 Peter Johnson (Max Prodigy): Trained L1 + Adam model.
-Colleague: Training L1 + SGD model.
+Colleague: Training L2 + SGD model.
 Instructor: Providing feedback and project guidelines.
 
 
