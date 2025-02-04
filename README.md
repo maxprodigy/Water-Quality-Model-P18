@@ -1,7 +1,13 @@
 # Water Potability Classification Project
 
 ##  Project Overview
-This project aims to **predict water potability** based on various physicochemical properties using machine learning models. The dataset consists of water quality parameters, and the goal is to develop models that effectively classify whether a given water sample is **potable (safe to drink) or not**.
+This project aims to **predict water potability** based on various properties using machine learning models. The dataset consists of water quality parameters, and the goal is to develop models that effectively classify whether a given water sample is **potable (safe to drink) or not**.
+
+## Video Presentation 
+
+Link: https://drive.google.com/file/d/1YnSEx58uqs4G636YBB8P-cbf3j6LNKV6/view?usp=sharing
+
+
 
 ## Models Implemented
 We trained and evaluated **two different models**, each utilizing different **regularization techniques** and **optimizers** to compare performance:
