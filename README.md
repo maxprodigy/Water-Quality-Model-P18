@@ -40,13 +40,17 @@ On the other hand, Peter Johnson's deep learning model uses L1 regularization, d
 
 📁 Water-Potability-Classification 
 │── 📄 README.md 
+
 │── 📄 requirements.txt # Dependencies required for the project
 
 │── 📂 data/
+
 │── 📄 water_potability.csv #Dataset
 
-│── 📂 notebooks/ # Notebooks for training and evaluation 
+│── 📂 notebooks/ # Notebooks for training and evaluation
+
 │── 📄 Peter_Johnson_Water_Quality_Model.ipynb
+
 │── 📄 Inès_IKIREZI_Water_Quality_Colab 
 
 
